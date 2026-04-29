@@ -68,7 +68,7 @@ mvn clean compile exec:java
 
 MIT License. See [LICENSE](./LICENSE).
 
-**Developed by [Leonardo Diaz](https://github.com/LeoDiaz-DataSc)**
+**Developed by [Diego Leobardo Diaz Hernandez](https://github.com/LeoDiaz-DataSc)**
 
 ---
 
@@ -113,4 +113,4 @@ cd [carpeta-del-proyecto]
 mvn clean compile exec:java
 ```
 
-**Desarrollado por [Leonardo Diaz](https://github.com/LeoDiaz-DataSc)**
+**Desarrollado por [Diego Leobardo Diaz Hernandez](https://github.com/LeoDiaz-DataSc)**
