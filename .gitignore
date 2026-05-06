@@ -22,6 +22,12 @@ nbdist/
 .classpath
 .project
 
+# Node.js
+node_modules/
+dist/
+.env
+.env.local
+
 # OS
 .DS_Store
 Thumbs.db

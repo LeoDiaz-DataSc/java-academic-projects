@@ -1,116 +1,112 @@
-# Java Academic Projects
+# 🏢 Java Enterprise Showcase
 
-[![Java](https://img.shields.io/badge/Java-11+-orange?logo=openjdk)](https://openjdk.org/)
-[![Maven](https://img.shields.io/badge/Maven-3.x-C71A36?logo=apachemaven)](https://maven.apache.org/)
-[![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?logo=mysql&logoColor=white)](https://www.mysql.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+> **Plataforma web empresarial** que moderniza proyectos Java académicos (Swing Desktop) a una arquitectura web moderna con Node.js API, React SPA y animaciones GSAP de alto rendimiento.
 
-## Overview
-
-A curated collection of Java academic projects covering CRUD operations with relational databases, data structures, compiler design (expression tree parsing), numerical methods, and desktop GUI development. Each project demonstrates specific computer science fundamentals and software design patterns.
-
-## Project Catalog
-
-### CRUD and Database Applications
-
-| Project | Description | Architecture |
-|---------|-------------|-------------|
-| **TallerCRUD** | Auto repair shop: clients, vehicles, repairs | MVC with config/dao/model/view layers |
-| **CRUD-TEST-MYSQL** | User and role management | MVC with Controllers/Models/Views |
-| **MAVEN-CRUD-JMYSQL** | CRUD with GUI forms | Maven, MySQL |
-| **sistemagym** | Gym membership: employees, members | NetBeans desktop |
-
-### Data Structures and Compiler Design
-
-| Project | Description |
-|---------|-------------|
-| **Arbolnodo** | Symbol tree node implementation for AST construction |
-| **Compiladores** | Expression tree parser for compiler design |
-
-### Numerical Methods
-
-| Project | Description |
-|---------|-------------|
-| **MN_Ejemplo1** | 11 implementations: root finding, interpolation, numerical integration |
-| **Metodos_Numericos** | Matrix-based numerical computation |
-
-## Highlighted Architecture: TallerCRUD
-
-```
-com.taller/
-    config/DatabaseConfig.java       # Database configuration
-    dao/
-        ClienteDAO.java              # Client data access
-        VehiculoDAO.java             # Vehicle data access
-        ReparacionDAO.java           # Repair data access
-    model/
-        Cliente.java                 # Client entity
-        Vehiculo.java                # Vehicle entity
-        Reparacion.java              # Repair entity
-    view/frames/
-        MainFrame.java               # Main application window
-        ClienteFrame.java            # Client management
-        VehiculoFrame.java           # Vehicle management
-        ReparacionFrame.java         # Repair tracking
-```
-
-## Installation
-
-### Prerequisites
-- JDK 11+, Maven 3.x, MySQL 8.0
-
-```bash
-cd [project-folder]
-mvn clean compile exec:java
-```
-
-## License
-
-MIT License. See [LICENSE](./LICENSE).
-
-**Developed by [Diego Leobardo Diaz Hernandez](https://github.com/LeoDiaz-DataSc)**
+![Node.js](https://img.shields.io/badge/Node.js-20-339933?logo=nodedotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
+![GSAP](https://img.shields.io/badge/GSAP-3.15-88CE02?logo=greensock&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?logo=mysql&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-blue)
 
 ---
 
-# Version en Espanol
+## 📋 Descripción
 
-## Descripcion General
+Este proyecto transforma tres aplicaciones Java de escritorio en una **plataforma web unificada** con tres módulos empresariales:
 
-Coleccion curada de proyectos academicos en Java que cubren operaciones CRUD con bases de datos relacionales, estructuras de datos, diseno de compiladores (analisis de arboles de expresion), metodos numericos y desarrollo de interfaces graficas de escritorio. Cada proyecto demuestra fundamentos especificos de ciencias de la computacion y patrones de diseno de software.
+| Módulo | Descripción | Legacy (Java) |
+|--------|------------|---------------|
+| 🔧 **Taller Mecánico** | Gestión de clientes, vehículos y reparaciones con máquina de estados | `TallerCRUD/` (Maven + JDBC) |
+| 💪 **Gimnasio** | Control de miembros, membresías, pagos y KPIs operativos | `sistemagym/` (Java Swing) |
+| 🌳 **BST Visualizer** | Árbol Binario de Búsqueda interactivo con animaciones GSAP | `Arbolnodo/` (Java Console) |
 
-## Catalogo de Proyectos
+---
 
-### Aplicaciones CRUD y Base de Datos
+## 🏗️ Arquitectura
 
-| Proyecto | Descripcion | Arquitectura |
-|----------|-------------|-------------|
-| **TallerCRUD** | Taller mecanico: clientes, vehiculos, reparaciones | MVC con capas config/dao/model/view |
-| **CRUD-TEST-MYSQL** | Gestion de usuarios y roles | MVC con Controllers/Models/Views |
-| **MAVEN-CRUD-JMYSQL** | CRUD con formularios GUI | Maven, MySQL |
-| **sistemagym** | Sistema de gimnasio: empleados, miembros | Escritorio NetBeans |
-
-### Estructuras de Datos y Diseno de Compiladores
-
-| Proyecto | Descripcion |
-|----------|-------------|
-| **Arbolnodo** | Implementacion de nodo de arbol de simbolos para construccion de AST |
-| **Compiladores** | Analizador de arbol de expresiones para diseno de compiladores |
-
-### Metodos Numericos
-
-| Proyecto | Descripcion |
-|----------|-------------|
-| **MN_Ejemplo1** | 11 implementaciones: busqueda de raices, interpolacion, integracion numerica |
-| **Metodos_Numericos** | Computacion numerica basada en matrices |
-
-## Instalacion
-
-### Requisitos Previos
-- JDK 11+, Maven 3.x, MySQL 8.0
-
-```bash
-cd [carpeta-del-proyecto]
-mvn clean compile exec:java
+```
+java-enterprise-showcase/
+├── legacy/                  ← Código Java original (preservado)
+│   ├── TallerCRUD/          ← Maven + JDBC + DAO Pattern
+│   ├── sistemagym/          ← Java Swing + MySQL
+│   ├── Arbolnodo/           ← BST en Java
+│   └── Compiladores/        ← Análisis Léxico
+├── backend/                 ← Node.js + Express API REST
+│   ├── routes/              ← auth.js, taller.js, gym.js
+│   ├── middleware/          ← JWT Auth + Audit Logs (ISO 27001)
+│   └── config/              ← Database pool (mysql2)
+├── frontend/                ← React 19 + Vite + GSAP
+│   └── src/components/
+│       ├── Taller/          ← Dashboard + KPIs + Reparaciones
+│       ├── Gym/             ← Miembros + Pagos + Distribución
+│       └── DSA/             ← BST Visualizer interactivo
+├── database/                ← MySQL Schema + Seed Data
+└── docker-compose.yml       ← MySQL + Backend + Frontend
 ```
 
-**Desarrollado por [Diego Leobardo Diaz Hernandez](https://github.com/LeoDiaz-DataSc)**
+---
+
+## 🔐 Seguridad (ISO 27001)
+
+- **JWT Authentication** — Login con tokens firmados y expiración configurable
+- **SHA2-256** — Contraseñas cifradas en base de datos
+- **Audit Logs** — Middleware silencioso que registra IP, usuario, acción y timestamp
+- **Variables de Entorno** — Cero credenciales en código fuente (`.env.example`)
+- **Prepared Statements** — Protección contra SQL Injection
+
+---
+
+## 🎨 UI/UX Premium
+
+- **GSAP Animations** — Timeline, stagger, `back.out` easing en BST Visualizer
+- **Design System** — Variables HSL, dark theme, glassmorphism cards
+- **Recharts** — Gráficas interactivas (PieChart distribución de planes)
+- **Responsive** — Grid system adaptable a cualquier resolución
+
+---
+
+## 🚀 Quick Start
+
+### Desarrollo Local
+
+```bash
+# 1. Base de datos
+mysql -u root -p < database/schema.sql
+
+# 2. Backend
+cd backend
+cp .env.example .env    # Editar credenciales
+npm install
+npm run dev             # → http://localhost:3000
+
+# 3. Frontend
+cd frontend
+npm install
+npm run dev             # → http://localhost:5173
+```
+
+### Docker (Un comando)
+
+```bash
+docker-compose up -d
+# Frontend:  http://localhost:5180
+# API:       http://localhost:3010
+# MySQL:     localhost:3310
+```
+
+---
+
+## 📊 Credenciales de Prueba
+
+| Email | Contraseña | Rol |
+|-------|-----------|-----|
+| `admin@showcase.com` | `Admin123` | Administrador |
+| `carlos@taller.com` | `Mecanico123` | Mecánico |
+| `laura@gym.com` | `Instructor123` | Instructor |
+
+---
+
+## 📜 Licencia
+
+MIT License — Copyright (c) 2026 Leonardo Diaz

@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: showcase-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-rootpassword}
+      MYSQL_DATABASE: java_showcase
+    ports:
+      - "3310:3306"
+    volumes:
+      - ./database/enterprise_schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+      - showcase_data:/var/lib/mysql
+
+  backend:
+    build: ./backend
+    container_name: showcase-api
+    restart: unless-stopped
+    depends_on:
+      - mysql
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASSWORD: ${DB_PASSWORD:-rootpassword}
+      DB_NAME: java_showcase
+      JWT_SECRET: ${JWT_SECRET:-dev-secret-change-in-production-32chars}
+      PORT: 3000
+    ports:
+      - "3010:3000"
+
+  frontend:
+    build: ./frontend
+    container_name: showcase-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    environment:
+      VITE_API_URL: http://localhost:3010/api
+    ports:
+      - "5180:80"
+
+volumes:
+  showcase_data:
