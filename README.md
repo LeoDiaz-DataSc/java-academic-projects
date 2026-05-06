@@ -109,4 +109,4 @@ docker-compose up -d
 
 ## 📜 Licencia
 
-MIT License — Copyright (c) 2026 Leonardo Diaz
+MIT License — Copyright (c) 2026 Diego Leobardo Diaz Hernandez
